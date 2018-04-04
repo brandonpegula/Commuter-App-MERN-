@@ -10,6 +10,7 @@ import Titles from "./Titles";
 import Form from "./Form";
 import Weather from "./Weather";
 
+
 const DestinationNew = () => <h2>DestinationNew</h2>
 
 
