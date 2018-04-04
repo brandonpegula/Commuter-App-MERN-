@@ -57,21 +57,32 @@ state = {
   }
   render(){
     return (
-      <div>
-        <Titles />
-        {/* Prop in form to access getWeather function. */}
-        <Form getWeather={this.getWeather}/> 
-        <Weather 
-          temperature = {this.state.temperature}
-          temp_high = {this.state.temp_high}
-          temp_low = {this.state.temp_low}
-          humidity = {this.state.humidity}
-          description = {this.state.description}
-          city = {this.state.city}
-          country = {this.state.country}
-          error = {this.state.error}
-          />
-      </div>
+        <div>
+				<div className="wrapper">
+					<div className="main">
+						<div className="container">
+							<div className="row">
+								<div className="col-md-5 title-container">
+									<Titles />
+								</div>
+								<div className="col-md-7 form-container">
+									<Form getWeather={this.getWeather} />
+                                    <Weather 
+                                        temperature={this.state.temperature} 
+                                        temp_high={this.state.temp_high} 
+                                        temp_low={this.state.temp_low} 
+                                        humidity={this.state.humidity} 
+                                        description={this.state.description} 
+                                        city={this.state.city} 
+                                        country={this.state.country} 
+                                        error={this.state.error} 
+                                    />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
     );
   }
 };

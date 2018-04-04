@@ -2,7 +2,7 @@ import React from "react";
 
 const Landing = () => {
     return (
-        <div style={{ textAlign: "center" }}>
+        <div>
             <h1>
                 Commute Easy
             </h1>

@@ -15,21 +15,14 @@ class Header extends Component {
     }
 
     render() {
-        return (
-            <nav>
-                <div className="nav-wrapper">
-                <Link 
-                to={this.props.auth ? '/destinations' : '/'} 
-                className="left brand-logo"
-                >
-                    Commuter
-                </Link>
-                <ul className="right">
-                    {this.renderContent()}
-                </ul>
-                </div>
-            </nav>
-        );
+        return <nav>
+						<div className="nav navbar-nav">
+							<Link to={this.props.auth ? "/destinations" : "/"} className="left brand-logo">
+								Commuter
+							</Link>
+							<ul className="right">{this.renderContent()}</ul>
+						</div>
+					</nav>;
     }
 }
 
