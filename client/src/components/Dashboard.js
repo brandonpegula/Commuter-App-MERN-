@@ -1,10 +1,12 @@
 import React from "react";
+import Titles from "./Titles";
+import Form from "./Form";
 
 const Dashboard = () => {
 	return (
 		<div style={{ textAlign: "center" }}>
-			<h1>Weather Dashboard</h1>
-			Figure out the weather and stuff!
+            <Titles />
+            <Form />
 		</div>
 	);
 };
