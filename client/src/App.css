@@ -30,6 +30,7 @@ body {
 .title-container {
     height: 95vh;
     /* background: url("") center center no-repeat; */
+    background: skyblue;
     background-size: cover;
     display: flex;
     align-items: center;
