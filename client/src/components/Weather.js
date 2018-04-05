@@ -1,4 +1,8 @@
 import React from "react";
+import Alert from "./Alert";
+import WeatherIcon from "react-icons-weather";
+
+
 
 const Weather = props => (
 	<div className="weather__info">
@@ -13,7 +17,8 @@ const Weather = props => (
 			)}
 		{props.temperature && (
 			<p className="weather__key">
-				Current Temp: <span className="weather__value">{props.temperature}&deg;F</span>
+				Current Temp:{" "}
+				<span className="weather__value">{props.temperature}&deg;F</span>
 			</p>
 		)}
 		{props.temp_high && (

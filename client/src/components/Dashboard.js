@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Titles from "./Titles";
 import Form from "./Form";
 import Weather from "./Weather";
+import Alert from "./Alert";
+
+import WeatherIcon from "react-icons-weather";
 
 import WEATHER_API from "../config_keys";
 
@@ -20,6 +23,8 @@ state = {
     city: undefined,
     country: undefined,
     error: undefined,
+    icon: undefined,
+
   }
  
   getWeather = async (e) => {
@@ -29,19 +34,20 @@ state = {
 
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
-    console.log(data);
+   
+    console.log(data.weather[0].icon);
 
     if (zip && country && data.cod !== '404'){
       this.setState({
-        temperature: data.main.temp,
-        temp_high: data.main.temp_max,
-        temp_low: data.main.temp_min,
-        humidity: data.main.humidity,
-        description: data.weather[0].description,
-        city: data.name,
-        country: data.sys.country,
-        error: "",
-      });
+				temperature: data.main.temp,
+				temp_high: data.main.temp_max,
+				temp_low: data.main.temp_min,
+				humidity: data.main.humidity,
+				description: data.weather[0].description,
+				city: data.name,
+				country: data.sys.country,
+				error: "",
+			});
     }else{
       this.setState({
         temperature: undefined,
@@ -56,34 +62,24 @@ state = {
     }
   }
   render(){
-    return (
-        <div>
+    return <div>
 				<div className="wrapper">
 					<div className="main">
 						<div className="container">
 							<div className="row">
 								<div className="col-md-5 title-container">
 									<Titles />
+									<img src="http://openweathermap.org/img/w/01d.png" />
 								</div>
 								<div className="col-md-7 form-container">
 									<Form getWeather={this.getWeather} />
-                                    <Weather 
-                                        temperature={this.state.temperature} 
-                                        temp_high={this.state.temp_high} 
-                                        temp_low={this.state.temp_low} 
-                                        humidity={this.state.humidity} 
-                                        description={this.state.description} 
-                                        city={this.state.city} 
-                                        country={this.state.country} 
-                                        error={this.state.error} 
-                                    />
+									<Weather icon={this.state.icon} temperature={this.state.temperature} temp_high={this.state.temp_high} temp_low={this.state.temp_low} humidity={this.state.humidity} description={this.state.description} city={this.state.city} country={this.state.country} error={this.state.error} />
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-            </div>
-    );
+			</div>;
   }
 };
 

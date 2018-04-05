@@ -6,8 +6,34 @@ body {
     font-family: "Open Sans", serif;
 }
 
+.navbar {
+    background: linear-gradient(to right, lightslategray, darkgrey);
+    box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0 1vh;
+    text-decoration: none;
+    font-size: 3vh;
+    font-family: 'Roboto Slab', serif;
+}
+
+.navbar a:hover {
+    background-color: #e74c3c;
+    color: white;
+    
+}
+
 .wrapper {
-    background: linear-gradient(to right, #e67e22, #e74c3c);
+    background: linear-gradient(to right, #b5cde1, #4682B4);
     height: 110vh;
     display: flex;
     justify-content: center;
@@ -22,15 +48,14 @@ body {
     margin: 0 auto;
 }
 
-/* .container {
-    padding: 0;
-    margin: 0;
-} */
+.container {
+    background-size: cover;
+}
 
 .title-container {
     height: 95vh;
     /* background: url("") center center no-repeat; */
-    background: skyblue;
+    background: lightgrey;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -64,7 +89,7 @@ body {
 input[type="text"] {
     background-color: transparent;
     border: 0;
-    border-bottom: solid 1px #f16051;
+    border-bottom: solid 1px #4682B4;
     width: 30%;
     padding-bottom: 4px;
     color: #fff !important;
@@ -93,7 +118,7 @@ button {
     letter-spacing: 1px;
     font-size: 15px;
     cursor: pointer;
-    background-color: #f16051;
+    background-color: #4682B4;
     color: #fff;
     font-weight: 100;
 }
@@ -110,7 +135,7 @@ button:active {
 }
 
 .weather__key {
-    color: #f16051;
+    color: #4682B4;
     border-bottom: solid 2px rgba(255, 255, 255, 0.06);
     padding: 10px 0 20px 0;
     font-weight: 400;
@@ -126,7 +151,7 @@ button:active {
 }
 
 .weather__error {
-    color: #f16051;
+    color: #4682B4;
     font-size: 20px;
     letter-spacing: 1px;
     font-weight: 200;

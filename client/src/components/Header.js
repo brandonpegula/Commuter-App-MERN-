@@ -8,9 +8,9 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><a href="/auth/google">Login with Google</a></li>
+                return <a href="/auth/google">Login with Google</a>
             default:
-                return <li><a href="/api/logout">Logout</a></li>;
+                return <a href="/api/logout">Logout</a>;
         }
     }
 
@@ -20,7 +20,7 @@ class Header extends Component {
 							<Link to={this.props.auth ? "/destinations" : "/"} className="left brand-logo">
 								Commuter
 							</Link>
-							<ul className="right">{this.renderContent()}</ul>
+							{this.renderContent()}
 						</div>
 					</nav>;
     }

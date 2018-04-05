@@ -1,11 +1,10 @@
 import React from "react";
-import Form from "./Form";
+import Alert from "./Alert";
 
 const Titles = () => (
 	<div>
-		<Form />
-		<h1 className="titles-container__title">Current Weather</h1>
-		<h3 className="titles-container__subtitle">It's raining out!</h3>
+		<h1 className="titles-container__title">Check the Current Weather</h1>
+		<h3 className="titles-container__subtitle">Let's see what your day looks like.</h3>
 	</div>
 );
 
