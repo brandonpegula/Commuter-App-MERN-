@@ -7,11 +7,26 @@ import Alert from "./Alert";
 const Weather = props => (
 	<div className="weather__info">
 		<div className="message">
-		{props.temperature > 32.0 &&
-			props.temperature < 42.0 && (
-				<h2>It's not freezing but you'll need that coat and maybe a scarf.</h2>
-			)}
-		{props.humidity > 80 && <h2>It's pea soup out there! Dress light.</h2>}
+			{props.temperature > 55.0 &&
+				props.temperature <= 65.0 && (
+					<p>
+						Equip: Light Jacket 👍 <br /> It's actually comfortable out there.🤞
+					</p>
+				)}
+			{props.temperature > 32.0 &&
+				props.temperature <= 55.0 && (
+					<p>
+						Equip: Heavy Coat & Hat👍 <br /> It's not quite freezing you'll
+						survive.💪
+					</p>
+				)}
+			{props.temperature >= 0.0 &&
+				props.temperature <= 32.0 && (
+					<p>
+						Equip: Winter Coat, Scarf, Gloves & Hat✓ <br /> Stay inside or
+						become a human popscicle.☃️
+					</p>
+				)}
 		</div>
 		{props.city &&
 			props.country && (
