@@ -7,7 +7,6 @@ import Form from "./Form";
 import Weather from "./Weather";
 import Alert from "./Alert";
 
-import WeatherIcon from "react-icons-weather";
 
 import WEATHER_API from "../config_keys";
 
@@ -35,7 +34,6 @@ state = {
     const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
    
-    console.log(data.weather[0].icon);
 
     if (zip && country && data.cod !== '404'){
       this.setState({
@@ -68,11 +66,9 @@ state = {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-5 title-container">
-									<Titles />
-									<img src="http://openweathermap.org/img/w/01d.png" />
+									<Form getWeather={this.getWeather} />
 								</div>
 								<div className="col-md-7 form-container">
-									<Form getWeather={this.getWeather} />
 									<Weather icon={this.state.icon} temperature={this.state.temperature} temp_high={this.state.temp_high} temp_low={this.state.temp_low} humidity={this.state.humidity} description={this.state.description} city={this.state.city} country={this.state.country} error={this.state.error} />
 								</div>
 							</div>

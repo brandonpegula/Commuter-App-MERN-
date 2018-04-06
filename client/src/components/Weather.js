@@ -1,11 +1,18 @@
 import React from "react";
 import Alert from "./Alert";
-import WeatherIcon from "react-icons-weather";
+
 
 
 
 const Weather = props => (
 	<div className="weather__info">
+		<div className="message">
+		{props.temperature > 32.0 &&
+			props.temperature < 42.0 && (
+				<h2>It's not freezing but you'll need that coat and maybe a scarf.</h2>
+			)}
+		{props.humidity > 80 && <h2>It's pea soup out there! Dress light.</h2>}
+		</div>
 		{props.city &&
 			props.country && (
 				<p className="weather__key">
