@@ -18,7 +18,7 @@ class Header extends Component {
         return <nav>
 						<div className="navbar">
 							<Link to={this.props.auth ? "/destinations" : "/"} className="left brand-logo">
-								Commuter
+								Brsk
 							</Link>
 							{this.renderContent()}
 						</div>

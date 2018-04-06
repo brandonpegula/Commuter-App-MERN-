@@ -8,7 +8,6 @@
     overflow: hidden;
     position: sticky;
     top: 0;
-    font-family: 'Roboto Slab', serif;
 }
 
 .navbar a {
@@ -19,13 +18,13 @@
     padding: 0 1vh;
     text-decoration: none;
     font-size: 3vh;
-    font-family: 'Roboto Slab', serif;
+    font-family: "Merriweather", serif;
 }
 
 
 .wrapper {
     background: linear-gradient(to right, #b5cde1, #4682B4);
-    height: 110vh;
+    height: 115vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +32,7 @@
 
 .wrapper-landing {
     background: linear-gradient(to right, #b5cde1, #4682B4);
-    height: 90vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +40,7 @@
 }
 
 .main {
-    height: 95vh;
+    height: 100vh;
     background: #fff;
     box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
     width: 90%;
@@ -63,7 +62,7 @@
 } */
 
 .title-container {
-    height: 95vh;
+    height: 100vh;
     /* background: url("") center center no-repeat; */
     background: lightgrey;
     background-size: cover;
@@ -109,7 +108,7 @@
 
 .form-container {
     background-color: #2c3e50;
-    height: 95vh;
+    height: 100vh;
     padding-top: 75px;
     padding-left: 50px;
 }
@@ -155,9 +154,15 @@ button:active {
     outline: none;
 }
 
+.conditions {
+    border-bottom: solid 1px #4682B4;
+}
+
 .message {
     color: #4682B4;
+    /* padding: 0; */
     text-align: center;
+    padding-top: 0%;
     background: lightgrey;
     box-shadow: 0px 13px 40px -13px rgba(0, 0, 0, 0.75);
     font-weight: 400;

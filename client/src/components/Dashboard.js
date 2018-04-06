@@ -19,29 +19,30 @@ state = {
     temp_low: undefined,
     humidity: undefined,
     description: undefined,
+    conditions: undefined,
     city: undefined,
     country: undefined,
     error: undefined,
-    icon: undefined,
 
   }
  
   getWeather = async (e) => {
     e.preventDefault();
-    const zip = e.target.elements.zip.value;
+    const cityname = e.target.elements.cityname.value;
     const country = e.target.elements.country.value;
 
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&appid=${API_KEY}&units=imperial`);
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityname},${country}&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
    
-
-    if (zip && country && data.cod !== '404'){
+    console.log (data);
+    if (cityname && country && data.cod !== '404'){
       this.setState({
 				temperature: data.main.temp,
 				temp_high: data.main.temp_max,
 				temp_low: data.main.temp_min,
 				humidity: data.main.humidity,
-				description: data.weather[0].description,
+        description: data.weather[0].description,
+        conditions: data.weather[0].main,
 				city: data.name,
 				country: data.sys.country,
 				error: "",
@@ -53,9 +54,10 @@ state = {
         temp_low: undefined,
         humidity: undefined,
         description: undefined,
+        conditions: undefined,
         city: undefined,
         country: undefined,
-        error: "Please enter a valid Zip Code & Country.",
+        error: "Please enter a valid City & Country.",
       });
     }
   }
@@ -69,7 +71,7 @@ state = {
 									<Form getWeather={this.getWeather} />
 								</div>
 								<div className="col-md-7 form-container">
-									<Weather icon={this.state.icon} temperature={this.state.temperature} temp_high={this.state.temp_high} temp_low={this.state.temp_low} humidity={this.state.humidity} description={this.state.description} city={this.state.city} country={this.state.country} error={this.state.error} />
+									<Weather icon={this.state.icon} temperature={this.state.temperature} temp_high={this.state.temp_high} temp_low={this.state.temp_low} humidity={this.state.humidity} description={this.state.description} conditions={this.state.conditions} city={this.state.city} country={this.state.country} error={this.state.error} />
 								</div>
 							</div>
 						</div>
