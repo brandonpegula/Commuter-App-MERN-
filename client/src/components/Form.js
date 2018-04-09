@@ -5,9 +5,7 @@ const Form = props => (
 	<form onSubmit={props.getWeather}>
 		<Titles />
 		<br />
-		<input type="text" name="cityname" placeholder="City" />
-		<input type="text" name="country" placeholder="Country" />
-		<br />
+		<input type="text" name="zip" placeholder="Zip Code" />
 		<button>Ask Brsk</button>
 	</form>
 );
