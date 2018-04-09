@@ -28,14 +28,14 @@ state = {
  
   getWeather = async (e) => {
     e.preventDefault();
-    const cityname = e.target.elements.cityname.value;
-    const country = e.target.elements.country.value;
+    const zip = e.target.elements.zip.value;
+    // const country = e.target.elements.country.value;
 
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityname},${country}&appid=${API_KEY}&units=imperial`);
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${API_KEY}&units=imperial`);
     const data = await api_call.json();
    
     console.log (data);
-    if (cityname && country && data.cod !== '404'){
+    if (zip && data.cod !== '404'){
       this.setState({
 				temperature: data.main.temp,
 				temp_high: data.main.temp_max,
