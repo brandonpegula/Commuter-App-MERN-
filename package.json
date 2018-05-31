@@ -4,14 +4,14 @@
   "main": "index.js",
   "engines": {
     "node": "9.3.0",
-    "yarn": "1.5.1"
+    "yarn": "1.7.0"
   },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "yarn --cwd client start",
     "dev": "concurrently 'yarn server' 'yarn client'",
-    "client-install": "(cd ./client && yarn install)",
+    "client-install": "yarn --cdw client install",
     "client-build": "(cd ./client && yarn run build)",
     "heroku-postbuild": "YARN_PRODUCTION=false yarn run client-install && yarn run client-build"
   },
