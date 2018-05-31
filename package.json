@@ -9,9 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client": "( cd ./client && yarn start)",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "client": "yarn --cwd client start",
+    "dev": "concurrently 'yarn server' 'yarn client'"
   },
   "license": "MIT",
   "dependencies": {
